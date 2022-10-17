@@ -15,10 +15,13 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @NoArgsConstructor
 public class Cliente {
+
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
+
     private String none;
+
     @Embedded
     private Endereco endereco;
 

@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 @AllArgsConstructor
@@ -19,6 +18,7 @@ import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @NoArgsConstructor
 public class Sacola {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,7 +29,7 @@ public class Sacola {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Item> itens;
-    private BigDecimal valorTotal;
+    private double valorTotal;
 
     @Enumerated
     private FormaPagamento FornaPagamento;
