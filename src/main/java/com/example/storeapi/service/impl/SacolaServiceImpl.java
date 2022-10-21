@@ -46,16 +46,8 @@ public class SacolaServiceImpl  implements SacolaService {
             itensDaScola.add(itemParaSerInserido);
         }
 
-        List<Double> valorDosItens = new ArrayList<>();
-        for (Item itemDaSacola: itensDaScola) {
-            double valorTotalItem =
-                    itemDaSacola.getProduto().getValorUnitario() * itemDaSacola.getQuantidade();
-            valorDosItens.add(valorTotalItem);
-        }
-
-
-        double valorTotalSacola = valorDosItens.stream()
-                .mapToDouble(valorTotalDeCadaItem -> valorTotalDeCadaItem)
+        double valorTotalSacola = itensDaScola.stream()
+                .mapToDouble(itemAtual -> itemAtual.getProduto().getValorUnitario() * itemAtual.getQuantidade())
                 .sum();
 
         sacola.setValorTotal(valorTotalSacola);
