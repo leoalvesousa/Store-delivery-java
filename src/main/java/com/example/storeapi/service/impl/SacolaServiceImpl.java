@@ -72,7 +72,7 @@ public class SacolaServiceImpl  implements SacolaService {
         }
         FormaPagamento formaPagamento =
                 escolhaformaPagamento == 0 ? FormaPagamento.DINHEIRO : FormaPagamento.CARTAO;
-        sacola.setFornaPagamento(formaPagamento);
+        sacola.setFormaPagamento(formaPagamento);
         sacola.setFechada(true);
         return sacolaRepository.save(sacola);
     }

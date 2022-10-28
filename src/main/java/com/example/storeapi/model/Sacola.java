@@ -33,7 +33,7 @@ public class Sacola {
     private double valorTotal;
 
     @Enumerated
-    private FormaPagamento FornaPagamento;
+    private FormaPagamento FormaPagamento;
     private boolean fechada;
 
 }
